@@ -1,0 +1,104 @@
+- day: Sunday
+  venue: Twin Taverns
+  city: Katy
+  start_time: "18:00"
+  end_time: null
+  frequency: weekly
+  notes: null
+
+- day: Monday
+  venue: Saloon Door West
+  city: Pearland
+  start_time: "19:00"
+  end_time: "22:00"
+  frequency: weekly
+  notes: null
+
+- day: Monday
+  venue: 1877 on the Strand
+  city: Galveston
+  start_time: "20:00"
+  end_time: "00:00"
+  frequency: weekly
+  notes: "Acoustic open mic"
+
+- day: Tuesday
+  venue: 1810 Ojeman
+  city: Houston
+  start_time: null
+  end_time: null
+  frequency: weekly
+  notes: "Sign-up at 19:30"
+
+- day: Tuesday
+  venue: 1877 on the Strand
+  city: Galveston
+  start_time: "20:00"
+  end_time: "00:00"
+  frequency: weekly
+  notes: "Electric open jam"
+
+- day: Wednesday
+  venue: Big Axe
+  city: Alvin
+  start_time: "19:00"
+  end_time: "22:00"
+  frequency: biweekly
+  notes: "Odd weeks only"
+
+- day: Wednesday
+  venue: Indies
+  city: Galveston
+  start_time: "19:00"
+  end_time: "22:00"
+  frequency: biweekly
+  notes: "Odd weeks only"
+
+- day: Wednesday
+  venue: Rock Neutneys
+  city: Webster
+  start_time: "20:00"
+  end_time: "00:00"
+  frequency: weekly
+  notes: null
+
+- day: Wednesday
+  venue: Sharky's Machine
+  city: West Houston
+  start_time: "20:30"
+  end_time: null
+  frequency: weekly
+  notes: "Venue name uncertain"
+
+- day: Thursday
+  venue: Galveston Bay Brewing
+  city: Kemah
+  start_time: "18:00"
+  end_time: "21:30"
+  frequency: weekly
+  notes: null
+
+- day: Thursday
+  venue: Kipp Rose
+  city: Kemah
+  start_time: "21:00"
+  end_time: "00:00"
+  frequency: weekly
+  notes: null
+
+- day: Friday
+  venue: Haak Winery
+  city: Santa Fe
+  start_time: "18:00"
+  end_time: "21:00"
+  frequency: monthly
+  notes: "Once a month"
+
+- day: Friday
+  venue: Java Owl Coffee House
+  city: Nassau Bay
+  start_time: "17:00"
+  end_time: "19:00"
+  frequency: unknown
+  notes: "Schedule not confirmed"
+  
