@@ -1,18 +1,5 @@
 ---
-import yaml from "yaml";
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
-
-// get current file directory
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// resolve data file relative to this file
-const filePath = path.resolve(__dirname, "../../data/open-mics.yml");
-
-const file = fs.readFileSync(filePath, "utf8");
-const events = yaml.parse(file);
+import events from "../data/open-mics.yml";
 ---
 
 <html lang="en">
