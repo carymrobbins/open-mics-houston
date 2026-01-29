@@ -1,0 +1,36 @@
+---
+import yaml from "yaml";
+import fs from "fs";
+
+const file = fs.readFileSync("data/open-mics.yml", "utf8");
+const events = yaml.parse(file);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Open Mics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body { font-family: system-ui, sans-serif; padding: 1rem; }
+      .event { border: 1px solid #ddd; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
+      .meta { color: #555; font-size: 0.9rem; }
+    </style>
+  </head>
+  <body>
+    <h1>Local Open Mics</h1>
+
+    {events.map(event => (
+      <div class="event">
+        <strong>{event.venue}</strong>
+        <div class="meta">
+          {event.day} · {event.city}<br />
+          {event.start_time ?? "?"}
+          {event.end_time ? `–${event.end_time}` : ""}
+          {event.frequency !== "weekly" ? ` · ${event.frequency}` : ""}
+        </div>
+        {event.notes && <div>{event.notes}</div>}
+      </div>
+    ))}
+  </body>
+</html>
