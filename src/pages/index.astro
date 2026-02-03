@@ -73,6 +73,13 @@ function formatTime(time) {
   if (m === undefined) m = 0;
   return `${h}:${m.toString().padStart(2, "0")} ${period}`;
 }
+
+function formatTimeRange(event) {
+  if (!event.start_time) return "";
+  let res = formatTime(event.start_time);
+  if (!event.end_time) return res;
+  return res + ` – ${formatTime(event.end_time)}`;
+}
 ---
 
 <!DOCTYPE html>
@@ -163,8 +170,7 @@ function formatTime(time) {
             </strong>
             <div class="meta">
               {event.address}<br/>
-              {formatTime(event.start_time)}
-              {event.end_time ? `–${formatTime(event.end_time)}` : ""}
+              {formatTimeRange(event)}
               {event.frequency !== "weekly" ? ` · ${event.frequency}` : ""}
             </div>
             {event.notes && <div>{event.notes}</div>}
