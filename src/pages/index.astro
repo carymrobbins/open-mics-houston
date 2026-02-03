@@ -3,43 +3,174 @@ import yaml from "yaml";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { Facebook, MapPin, Github, Globe, Instagram } from "lucide-react";
 
-// get current file directory
+// resolve current directory
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// resolve data file relative to this file
+// load YAML at build time
 const filePath = path.resolve(__dirname, "../../data/open-mics.yml");
-
 const file = fs.readFileSync(filePath, "utf8");
 const events = yaml.parse(file);
+
+// ordering helpers
+const dayOrder = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
+
+function timeToMinutes(t) {
+  if (!t) return 0;
+  const [time, meridiem] = t.split(" ");
+  let [h, m] = time.split(":").map(Number);
+  if (meridiem === "PM" && h !== 12) h += 12;
+  if (meridiem === "AM" && h === 12) h = 0;
+  return h * 60 + (m || 0);
+}
+
+// group by day
+const grouped = events.reduce((acc, e) => {
+  if (!e.day) return acc;
+  acc[e.day] ??= [];
+  acc[e.day].push(e);
+  return acc;
+}, {});
+
+// sort days and events
+const groupedSorted = Object.entries(grouped)
+  .sort(
+    ([a], [b]) => dayOrder.indexOf(a) - dayOrder.indexOf(b)
+  )
+  .map(([day, events]) => ({
+    day,
+    events: events.sort(
+      (a, b) => timeToMinutes(a.start_time) - timeToMinutes(b.start_time)
+    ),
+  }));
+
+function formatTime(time) {
+  if (!time) return "?";
+
+  // If already has AM/PM, just return
+  if (time.toUpperCase().includes("AM") || time.toUpperCase().includes("PM")) {
+    return time;
+  }
+
+  // Parse hour and minute
+  let [h, m] = time.split(":").map(Number);
+  if (isNaN(h)) return time; // fallback
+
+  const period = h >= 12 ? "PM" : "AM";
+  if (h > 12) h -= 12;
+  if (h === 0) h = 12;
+
+  if (m === undefined) m = 0;
+  return `${h}:${m.toString().padStart(2, "0")} ${period}`;
+}
 ---
 
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Open Mics</title>
+    <title>Houston Open Mics</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
-      body { font-family: system-ui, sans-serif; padding: 1rem; }
-      .event { border: 1px solid #ddd; border-radius: 8px; padding: 1rem; margin-bottom: 1rem; }
-      .meta { color: #555; font-size: 0.9rem; }
+      body {
+        font-family: system-ui, sans-serif;
+        padding: 1rem;
+        max-width: 800px;
+        margin: auto;
+      }
+      h1 {
+        margin-bottom: 0.5rem;
+      }
+      h2 {
+        margin-top: 2rem;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 0.25rem;
+      }
+      .event {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 0.75rem 1rem;
+        margin-top: 0.75rem;
+      }
+      .meta {
+        color: #555;
+        font-size: 0.9rem;
+        margin-top: 0.25rem;
+      }
+      .icon-link {
+        text-decoration: none;
+        color: inherit;
+        vertical-align: middle;
+        margin-left: 0.25rem;
+      }
+      .icon-link:hover {
+        color: blue;
+      }
     </style>
   </head>
   <body>
-    <h1>Local Open Mics</h1>
+    <h1>Houston Open Mics</h1>
+    <p>Community-maintained list. PRs welcome.</p>
+    <p>
+      <a href="https://github.com/carymrobbins/open-mics-houston"
+         target="_blank"
+         rel="noopener"
+         class="icon-link"
+         title="Github">
+        <Github size={18} />
+        github.com/carymrobbins/open-mics-houston
+      </a>
+    </p>
 
-    {events.map(event => (
-      <div class="event">
-        <strong>{event.venue}</strong>
-        <div class="meta">
-          {event.day} · {event.city}<br />
-          {event.start_time ?? "?"}
-          {event.end_time ? `–${event.end_time}` : ""}
-          {event.frequency !== "weekly" ? ` · ${event.frequency}` : ""}
-        </div>
-        {event.notes && <div>{event.notes}</div>}
-      </div>
+    {groupedSorted.map(({ day, events }) => (
+      <>
+        <h2>{day}</h2>
+
+        {events.map(event => (
+          <div class="event">
+            <strong>
+              {event.venue}
+              {event.website && (
+                <a href={event.website} target="_blank" rel="noopener" class="icon-link" title="Website">
+                  <Globe size={18} />
+                </a>
+              )}
+              {event.facebook && (
+                <a href={event.facebook} target="_blank" rel="noopener" class="icon-link" title="Facebook">
+                  <Facebook size={18} />
+                </a>
+              )}
+              {event.instagram && (
+                <a href={event.instagram} target="_blank" rel="noopener" class="icon-link" title="Instagram">
+                  <Instagram size={18} />
+                </a>
+              )}
+              {event.google_maps && (
+                <a href={event.google_maps} target="_blank" rel="noopener" class="icon-link" title="Google Maps">
+                  <MapPin size={18} />
+                </a>
+              )}
+            </strong>
+            <div class="meta">
+              {event.address}<br/>
+              {formatTime(event.start_time)}
+              {event.end_time ? `–${formatTime(event.end_time)}` : ""}
+              {event.frequency !== "weekly" ? ` · ${event.frequency}` : ""}
+            </div>
+            {event.notes && <div>{event.notes}</div>}
+          </div>
+        ))}
+      </>
     ))}
   </body>
 </html>

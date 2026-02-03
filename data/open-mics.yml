@@ -1,104 +1,127 @@
 - day: Sunday
-  venue: Twin Taverns
-  city: Katy
+  venue: Twins Tavern
+  address: "5805 Hwy Blvd, Katy, TX 77494"
   start_time: "18:00"
   end_time: null
   frequency: weekly
   notes: null
+  facebook: "https://www.facebook.com/profile.php/?id=61551118196111"
+  google_maps: "https://maps.app.goo.gl/VQLSYSRMRHSKYw4L7"
 
 - day: Monday
   venue: Saloon Door West
-  city: Pearland
+  address: 1231 Broadway St, Pearland, TX 77581
   start_time: "19:00"
   end_time: "22:00"
   frequency: weekly
   notes: null
+  website: https://saloondoorwest.com
+  facebook: https://www.facebook.com/profile.php?id=100089759117533
+  google_maps: https://maps.app.goo.gl/GtjLtJpBHt3ZY5Uz7
 
 - day: Monday
   venue: 1877 on the Strand
-  city: Galveston
+  address: 2411 The Strand, Galveston, TX 77550
   start_time: "20:00"
   end_time: "00:00"
   frequency: weekly
   notes: "Acoustic open mic"
+  facebook: https://www.facebook.com/profile.php?id=100092334912256
+  google_maps: https://maps.app.goo.gl/NreA6EJFrunN38F47
 
 - day: Tuesday
-  venue: 1810 Ojeman
-  city: Houston
-  start_time: null
+  venue: Eighteen Ten Ojeman
+  address: 1810 Ojeman Rd, Houston, TX 77080
+  start_time: "20:00"
   end_time: null
   frequency: weekly
-  notes: "Sign-up at 19:30"
+  notes: "Sign-up at 7:30 PM"
+  facebook: https://www.facebook.com/eighteentenojeman
+  google_maps: https://maps.app.goo.gl/6PQ1bc844F6LvQeFA
 
 - day: Tuesday
   venue: 1877 on the Strand
-  city: Galveston
+  address: 2411 The Strand, Galveston, TX 77550
   start_time: "20:00"
   end_time: "00:00"
   frequency: weekly
   notes: "Electric open jam"
+  facebook: https://www.facebook.com/profile.php?id=100092334912256
+  google_maps: https://maps.app.goo.gl/NreA6EJFrunN38F47
 
 - day: Wednesday
-  venue: Big Axe
-  city: Alvin
+  venue: Big Axe Bar and Grill
+  address: 1204 FM 1462 Suite B, Alvin, TX 77511
   start_time: "19:00"
   end_time: "22:00"
   frequency: biweekly
   notes: "Odd weeks only"
+  website: https://bigaxebarandgrill.com/
+  facebook: https://www.facebook.com/profile.php?id=100070841829766
+  google_maps: https://maps.app.goo.gl/HoJQoToTKGUx6ckW7
 
 - day: Wednesday
-  venue: Indies
-  city: Galveston
+  venue: Indies Coffee Bar and Speakeasy
+  address: 1813 61st St, Galveston, TX 77551
   start_time: "19:00"
   end_time: "22:00"
   frequency: biweekly
   notes: "Odd weeks only"
+  website: https://indiescoffee.com
+  facebook: https://www.facebook.com/IndiesCoffeeCo
+  instagram: https://www.instagram.com/indiescoffeebar
+  google_maps: https://maps.app.goo.gl/uWCx4aJtZ8xkdKmr7
 
 - day: Wednesday
-  venue: Rock Neutneys
-  city: Webster
+  venue: Rock Neutney's Sports Bar
+  address: 2416 Bay Area Blvd Suite E, Houston, TX 77058
   start_time: "20:00"
   end_time: "00:00"
   frequency: weekly
   notes: null
-
-- day: Wednesday
-  venue: Sharky's Machine
-  city: West Houston
-  start_time: "20:30"
-  end_time: null
-  frequency: weekly
-  notes: "Venue name uncertain"
+  website: http://www.rockneutney.com/
+  facebook: https://www.facebook.com/RockNeutneysSportsBar
+  google_maps: https://maps.app.goo.gl/meVarvLjTAEf3fcDA
 
 - day: Thursday
   venue: Galveston Bay Brewing
-  city: Kemah
+  address: 902 Marina Bay Dr, Clear Lake Shores, TX 77565
   start_time: "18:00"
   end_time: "21:30"
   frequency: weekly
   notes: null
+  facebook: https://www.facebook.com/GalvestonBayBrewing
+  google_maps: https://maps.app.goo.gl/F8EqN2m9tH6ZV5N38
+  website: https://galvestonbaybrewing.com
 
 - day: Thursday
   venue: Kipp Rose
-  city: Kemah
+  address: 504 Kipp Ave, Kemah, TX 77565
   start_time: "21:00"
   end_time: "00:00"
   frequency: weekly
   notes: null
+  google_maps: https://maps.app.goo.gl/Js57myU95NxCbpma6
+  facebook: https://www.facebook.com/504KippAvenue
 
 - day: Friday
-  venue: Haak Winery
-  city: Santa Fe
+  venue: Haak Vineyards & Winery
+  address: 6310 Avenue T, Santa Fe, TX 77510
   start_time: "18:00"
   end_time: "21:00"
   frequency: monthly
-  notes: "Once a month"
+  notes: null
+  website: http://www.haakwines.com/
+  facebook: https://www.facebook.com/haakwinery
+  google_maps: https://maps.app.goo.gl/hz223mz3Ub9yJkW68
 
 - day: Friday
   venue: Java Owl Coffee House
-  city: Nassau Bay
+  address: 1354 E NASA Pkwy Ste J, Houston, TX 77058
   start_time: "17:00"
   end_time: "19:00"
   frequency: unknown
   notes: "Schedule not confirmed"
-  
+  google_maps: https://maps.app.goo.gl/gcNr7upPGQVqXvog7
+  facebook: https://www.facebook.com/JavaOwlCoffeeHouse
+  instagram: instagram.com/JAVAOWLCOFFEEHOUSE

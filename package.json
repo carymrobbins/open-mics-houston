@@ -6,7 +6,11 @@
     "build": "astro build"
   },
   "dependencies": {
+    "@astrojs/react": "^4.4.2",
     "astro": "^4.0.0",
+    "lucide-react": "^0.563.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
     "yaml": "^2.4.0"
   }
 }
