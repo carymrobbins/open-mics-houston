@@ -3,7 +3,8 @@ import yaml from "yaml";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { Facebook, MapPin, Github, Globe, Instagram } from "lucide-react";
+import IconLink from "../components/IconLink.astro";
+import { Github } from "lucide-react";
 
 // resolve current directory
 const __filename = fileURLToPath(import.meta.url);
@@ -109,6 +110,16 @@ function formatTimeRange(event) {
   if (!event.end_time) return res;
   return res + ` – ${formatTime(event.end_time)}`;
 }
+
+function eachIconField(o, f) {
+  return [
+    "website",
+    "facebook",
+    "instagram",
+    "google_maps",
+  ].filter(field => o?.[field])
+   .map(field => f(field));
+}
 ---
 
 <!DOCTYPE html>
@@ -176,26 +187,9 @@ function formatTimeRange(event) {
           <div class="event">
             <strong>
               {event.venue}
-              {event.website && (
-                <a href={event.website} target="_blank" rel="noopener" class="icon-link" title="Website">
-                  <Globe size={18} />
-                </a>
-              )}
-              {event.facebook && (
-                <a href={event.facebook} target="_blank" rel="noopener" class="icon-link" title="Facebook">
-                  <Facebook size={18} />
-                </a>
-              )}
-              {event.instagram && (
-                <a href={event.instagram} target="_blank" rel="noopener" class="icon-link" title="Instagram">
-                  <Instagram size={18} />
-                </a>
-              )}
-              {event.google_maps && (
-                <a href={event.google_maps} target="_blank" rel="noopener" class="icon-link" title="Google Maps">
-                  <MapPin size={18} />
-                </a>
-              )}
+              {eachIconField(event, field => (
+                <IconLink target={event} field={field} />
+              ))}
             </strong>
             <div class="meta">
               {event.address}<br/>
@@ -205,16 +199,9 @@ function formatTimeRange(event) {
                 <>
                   <br/>
                   Hosted by {event.host.name}
-                  {event.host.facebook && (
-                    <a href={event.host.facebook} target="_blank" rel="noopener" class="icon-link" title="Facebook">
-                      <Facebook size={18} />
-                    </a>
-                  )}
-                  {event.host.instagram && (
-                    <a href={event.host.instagram} target="_blank" rel="noopener" class="icon-link" title="Instagram">
-                      <Instagram size={18} />
-                    </a>
-                  )}
+                  {eachIconField(event.host, field => (
+                    <IconLink target={event.host} field={field} />
+                  ))}
                 </>
               )}
               {event.sign_up && (

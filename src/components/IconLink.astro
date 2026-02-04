@@ -1,0 +1,47 @@
+---
+import { Globe, Facebook, Instagram, MapPin } from "lucide-react";
+
+const { target, field } = Astro.props;
+
+const iconMap = {
+  website: Globe,
+  facebook: Facebook,
+  instagram: Instagram,
+  google_maps: MapPin,
+};
+
+const url = target[field];
+const IconComponent = iconMap[field];
+if (!url || !IconComponent) {
+  return null;
+}
+
+const className = `icon-link icon-link-${field}`.replace("_", "-");
+const title = field[0].toUpperCase() + field.slice(1).replace("_", " ");
+---
+<style>
+/* Base styles for all icon links */
+.icon-link {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.25rem;
+  text-decoration: none;
+  color: inherit; /* ensures the icon uses this color */
+  transition: color 0.2s ease;
+}
+
+/* Optional: target the SVG specifically */
+.icon-link .icon-svg {
+  display: block; /* prevents weird spacing issues */
+  color: currentColor; /* makes Lucide icon follow text color */
+}
+
+.icon-link-website { color: #0077b5; }
+.icon-link-facebook { color: #1877f2; }
+.icon-link-instagram { color: #e1306c; }
+.icon-link-google-maps { color: #ec2f2f; }
+.icon-link:hover { filter: brightness(1.5); }
+</style>
+<a href={url} target="_blank" rel="noopener" class={className} title={title}>
+  <IconComponent size={18} class="icon-svg" />
+</a>
