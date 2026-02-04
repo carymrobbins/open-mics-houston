@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
 // load YAML at build time
 const filePath = path.resolve(__dirname, "../../data/open-mics.yml");
 const file = fs.readFileSync(filePath, "utf8");
-const events = yaml.parse(file);
+const data = yaml.parse(file);
 
 // ordering helpers
 const dayOrder = [
@@ -35,12 +35,40 @@ function timeToMinutes(t) {
 }
 
 // group by day
-const grouped = events.reduce((acc, e) => {
+const grouped = data.events.reduce((acc, e) => {
   if (!e.day) return acc;
   acc[e.day] ??= [];
   acc[e.day].push(e);
   return acc;
 }, {});
+
+function reduceArrayToObjectByField(arr, k) {
+  return arr.reduce((acc, x) => {
+    acc[x[k]] = x;
+    return acc;
+  }, {});
+}
+
+const venues = reduceArrayToObjectByField(data.venues, "name");
+const hosts = reduceArrayToObjectByField(data.hosts, "name");
+
+function patchEvent(event) {
+  const venue = venues[event.venue];
+  if (venue) {
+    for (const k of Object.keys(venue)) {
+      event[k] ||= venue[k];
+    }
+  }
+  if (event.host) {
+    const host = hosts[event.host];
+    if (host) {
+      event.host = host;
+    } else {
+      event.host = { name: event.host };
+    }
+  }
+  return event;
+}
 
 // sort days and events
 const groupedSorted = Object.entries(grouped)
@@ -49,9 +77,10 @@ const groupedSorted = Object.entries(grouped)
   )
   .map(([day, events]) => ({
     day,
-    events: events.sort(
-      (a, b) => timeToMinutes(a.start_time) - timeToMinutes(b.start_time)
-    ),
+    events:
+      events.map(patchEvent).sort(
+        (a, b) => timeToMinutes(a.start_time) - timeToMinutes(b.start_time)
+      ),
   }));
 
 function formatTime(time) {
@@ -172,6 +201,28 @@ function formatTimeRange(event) {
               {event.address}<br/>
               {formatTimeRange(event)}
               {event.frequency !== "weekly" ? ` · ${event.frequency}` : ""}
+              {event.host && (
+                <>
+                  <br/>
+                  Hosted by {event.host.name}
+                  {event.host.facebook && (
+                    <a href={event.host.facebook} target="_blank" rel="noopener" class="icon-link" title="Facebook">
+                      <Facebook size={18} />
+                    </a>
+                  )}
+                  {event.host.instagram && (
+                    <a href={event.host.instagram} target="_blank" rel="noopener" class="icon-link" title="Instagram">
+                      <Instagram size={18} />
+                    </a>
+                  )}
+                </>
+              )}
+              {event.sign_up && (
+                <>
+                  <br/>
+                  Sign up at {formatTime(event.sign_up)}
+                </>
+              )}
             </div>
             {event.notes && <div>{event.notes}</div>}
           </div>

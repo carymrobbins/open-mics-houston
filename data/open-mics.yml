@@ -1,127 +1,159 @@
-- day: Sunday
-  venue: Twins Tavern
-  address: "5805 Hwy Blvd, Katy, TX 77494"
-  start_time: "18:00"
-  end_time: null
-  frequency: weekly
-  notes: null
-  facebook: "https://www.facebook.com/profile.php/?id=61551118196111"
-  google_maps: "https://maps.app.goo.gl/VQLSYSRMRHSKYw4L7"
+events:
+  - day: Monday
+    venue: 1877 on the Strand
+    start_time: "20:00"
+    end_time: "00:00"
+    frequency: weekly
+    notes: "Acoustic open mic"
+    host: Christian Weigand
 
-- day: Monday
-  venue: Saloon Door West
-  address: 1231 Broadway St, Pearland, TX 77581
-  start_time: "19:00"
-  end_time: "22:00"
-  frequency: weekly
-  notes: null
-  website: https://saloondoorwest.com
-  facebook: https://www.facebook.com/profile.php?id=100089759117533
-  google_maps: https://maps.app.goo.gl/GtjLtJpBHt3ZY5Uz7
+  - day: Tuesday
+    venue: Saloon Door West
+    address: 1231 Broadway St, Pearland, TX 77581
+    sign_up: 18:30
+    start_time: "19:00"
+    end_time: "21:00"
+    frequency: weekly
+    website: https://saloondoorwest.com
+    facebook: https://www.facebook.com/profile.php?id=100089759117533
+    google_maps: https://maps.app.goo.gl/GtjLtJpBHt3ZY5Uz7
+    host: Brock Wilson
 
-- day: Monday
-  venue: 1877 on the Strand
-  address: 2411 The Strand, Galveston, TX 77550
-  start_time: "20:00"
-  end_time: "00:00"
-  frequency: weekly
-  notes: "Acoustic open mic"
-  facebook: https://www.facebook.com/profile.php?id=100092334912256
-  google_maps: https://maps.app.goo.gl/NreA6EJFrunN38F47
 
-- day: Tuesday
-  venue: Eighteen Ten Ojeman
-  address: 1810 Ojeman Rd, Houston, TX 77080
-  start_time: "20:00"
-  end_time: null
-  frequency: weekly
-  notes: "Sign-up at 7:30 PM"
-  facebook: https://www.facebook.com/eighteentenojeman
-  google_maps: https://maps.app.goo.gl/6PQ1bc844F6LvQeFA
+  - day: Tuesday
+    venue: Eighteen Ten Ojeman
+    address: 1810 Ojeman Rd, Houston, TX 77080
+    sign_up: 19:30
+    start_time: "20:00"
+    end_time: null
+    frequency: weekly
+    facebook: https://www.facebook.com/eighteentenojeman
+    google_maps: https://maps.app.goo.gl/6PQ1bc844F6LvQeFA
 
-- day: Tuesday
-  venue: 1877 on the Strand
-  address: 2411 The Strand, Galveston, TX 77550
-  start_time: "20:00"
-  end_time: "00:00"
-  frequency: weekly
-  notes: "Electric open jam"
-  facebook: https://www.facebook.com/profile.php?id=100092334912256
-  google_maps: https://maps.app.goo.gl/NreA6EJFrunN38F47
+  - day: Tuesday
+    venue: 1877 on the Strand
+    start_time: "20:00"
+    end_time: "00:00"
+    frequency: weekly
+    notes: "Electric open jam"
+    host: Tuesday Night Music Club
 
-- day: Wednesday
-  venue: Big Axe Bar and Grill
-  address: 1204 FM 1462 Suite B, Alvin, TX 77511
-  start_time: "19:00"
-  end_time: "22:00"
-  frequency: biweekly
-  notes: "Odd weeks only"
-  website: https://bigaxebarandgrill.com/
-  facebook: https://www.facebook.com/profile.php?id=100070841829766
-  google_maps: https://maps.app.goo.gl/HoJQoToTKGUx6ckW7
+  - day: Wednesday
+    venue: Big Axe Bar and Grill
+    address: 1204 FM 1462 Suite B, Alvin, TX 77511
+    start_time: "19:00"
+    end_time: "22:00"
+    frequency: biweekly
+    notes: "Odd weeks only"
+    website: https://bigaxebarandgrill.com/
+    facebook: https://www.facebook.com/profile.php?id=100070841829766
+    google_maps: https://maps.app.goo.gl/HoJQoToTKGUx6ckW7
+    host: Rory Price
 
-- day: Wednesday
-  venue: Indies Coffee Bar and Speakeasy
-  address: 1813 61st St, Galveston, TX 77551
-  start_time: "19:00"
-  end_time: "22:00"
-  frequency: biweekly
-  notes: "Odd weeks only"
-  website: https://indiescoffee.com
-  facebook: https://www.facebook.com/IndiesCoffeeCo
-  instagram: https://www.instagram.com/indiescoffeebar
-  google_maps: https://maps.app.goo.gl/uWCx4aJtZ8xkdKmr7
+  - day: Wednesday
+    venue: Indies Coffee Bar and Speakeasy
+    address: 1813 61st St, Galveston, TX 77551
+    start_time: "19:00"
+    end_time: "22:00"
+    frequency: biweekly
+    notes: "Odd weeks only"
+    website: https://indiescoffee.com
+    facebook: https://www.facebook.com/IndiesCoffeeCo
+    instagram: https://www.instagram.com/indiescoffeebar
+    google_maps: https://maps.app.goo.gl/uWCx4aJtZ8xkdKmr7
 
-- day: Wednesday
-  venue: Rock Neutney's Sports Bar
-  address: 2416 Bay Area Blvd Suite E, Houston, TX 77058
-  start_time: "20:00"
-  end_time: "00:00"
-  frequency: weekly
-  notes: null
-  website: http://www.rockneutney.com/
-  facebook: https://www.facebook.com/RockNeutneysSportsBar
-  google_maps: https://maps.app.goo.gl/meVarvLjTAEf3fcDA
+  - day: Wednesday
+    venue: Rock Neutney's Sports Bar
+    address: 2416 Bay Area Blvd Suite E, Houston, TX 77058
+    start_time: "20:00"
+    end_time: "00:00"
+    frequency: weekly
+    notes: null
+    website: http://www.rockneutney.com/
+    facebook: https://www.facebook.com/RockNeutneysSportsBar
+    google_maps: https://maps.app.goo.gl/meVarvLjTAEf3fcDA
+    host: Harmony Honey
 
-- day: Thursday
-  venue: Galveston Bay Brewing
-  address: 902 Marina Bay Dr, Clear Lake Shores, TX 77565
-  start_time: "18:00"
-  end_time: "21:30"
-  frequency: weekly
-  notes: null
-  facebook: https://www.facebook.com/GalvestonBayBrewing
-  google_maps: https://maps.app.goo.gl/F8EqN2m9tH6ZV5N38
-  website: https://galvestonbaybrewing.com
+  - day: Thursday
+    venue: Galveston Bay Brewing
+    address: 902 Marina Bay Dr, Clear Lake Shores, TX 77565
+    start_time: "18:00"
+    end_time: "21:30"
+    frequency: weekly
+    notes: null
+    facebook: https://www.facebook.com/GalvestonBayBrewing
+    google_maps: https://maps.app.goo.gl/F8EqN2m9tH6ZV5N38
+    website: https://galvestonbaybrewing.com
+    host: Robert Greaney
 
-- day: Thursday
-  venue: Kipp Rose
-  address: 504 Kipp Ave, Kemah, TX 77565
-  start_time: "21:00"
-  end_time: "00:00"
-  frequency: weekly
-  notes: null
-  google_maps: https://maps.app.goo.gl/Js57myU95NxCbpma6
-  facebook: https://www.facebook.com/504KippAvenue
+  - day: Thursday
+    venue: Kipp Rose
+    address: 504 Kipp Ave, Kemah, TX 77565
+    start_time: "21:00"
+    end_time: "00:00"
+    frequency: weekly
+    notes: null
+    google_maps: https://maps.app.goo.gl/Js57myU95NxCbpma6
+    facebook: https://www.facebook.com/504KippAvenue
+    host: Christian Weigand
 
-- day: Friday
-  venue: Haak Vineyards & Winery
-  address: 6310 Avenue T, Santa Fe, TX 77510
-  start_time: "18:00"
-  end_time: "21:00"
-  frequency: monthly
-  notes: null
-  website: http://www.haakwines.com/
-  facebook: https://www.facebook.com/haakwinery
-  google_maps: https://maps.app.goo.gl/hz223mz3Ub9yJkW68
+  - day: Friday
+    venue: Haak Vineyards & Winery
+    address: 6310 Avenue T, Santa Fe, TX 77510
+    start_time: "18:00"
+    end_time: "21:00"
+    frequency: monthly
+    notes: null
+    website: http://www.haakwines.com/
+    facebook: https://www.facebook.com/haakwinery
+    google_maps: https://maps.app.goo.gl/hz223mz3Ub9yJkW68
+    host: Arian Russell
 
-- day: Friday
-  venue: Java Owl Coffee House
-  address: 1354 E NASA Pkwy Ste J, Houston, TX 77058
-  start_time: "17:00"
-  end_time: "19:00"
-  frequency: unknown
-  notes: "Schedule not confirmed"
-  google_maps: https://maps.app.goo.gl/gcNr7upPGQVqXvog7
-  facebook: https://www.facebook.com/JavaOwlCoffeeHouse
-  instagram: instagram.com/JAVAOWLCOFFEEHOUSE
+  - day: Friday
+    venue: Java Owl Coffee House
+    address: 1354 E NASA Pkwy Ste J, Houston, TX 77058
+    start_time: "17:00"
+    end_time: "19:00"
+    frequency: unknown
+    notes: "Schedule not confirmed"
+    google_maps: https://maps.app.goo.gl/gcNr7upPGQVqXvog7
+    facebook: https://www.facebook.com/JavaOwlCoffeeHouse
+    instagram: instagram.com/JAVAOWLCOFFEEHOUSE
+
+  - day: Sunday
+    venue: Twins Tavern
+    address: "5805 Hwy Blvd, Katy, TX 77494"
+    start_time: "18:00"
+    end_time: null
+    frequency: weekly
+    notes: null
+    facebook: "https://www.facebook.com/profile.php/?id=61551118196111"
+    google_maps: "https://maps.app.goo.gl/VQLSYSRMRHSKYw4L7"
+
+venues:
+  - name: 1877 on the Strand
+    address: 2411 The Strand, Galveston, TX 77550
+    facebook: https://www.facebook.com/profile.php?id=100092334912256
+    google_maps: https://maps.app.goo.gl/NreA6EJFrunN38F47
+
+hosts:
+  - name: Robert Greaney
+    facebook: https://www.facebook.com/Robert.Greaney.Music
+
+  - name: Christian Weigand
+    facebook: https://www.facebook.com/christian.weigand
+
+  - name: Rory Price
+    facebook: https://www.facebook.com/profile.php?id=61562764031913
+
+  - name: Tuesday Night Music Club
+    facebook: https://www.facebook.com/SharkysTNMC
+
+  - name: Adrian Russell
+    facebook: https://www.facebook.com/adrian.russell.54
+
+  - name: Harmony Honey
+    facebook: https://www.facebook.com/harmonyhoneyhtx
+
+  - name: Brock Wilson
+    facebook: https://www.facebook.com/brockwilsontexas
