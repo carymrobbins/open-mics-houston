@@ -7,6 +7,15 @@ events:
     notes: "Acoustic open mic"
     host: Christian Weigand
 
+  - day: Monday
+    venue: 510 West
+    address: 510 W Texas Ave, Baytown, TX 77520
+    start_time: 19:00
+    end_time: 21:00
+    frequency: weekly
+    google_maps: https://maps.app.goo.gl/brCHMirijmu9xpw7A
+    host: Christian Elizondo
+
   - day: Tuesday
     venue: Saloon Door West
     address: 1231 Broadway St, Pearland, TX 77581
@@ -48,6 +57,16 @@ events:
     website: https://bigaxebarandgrill.com/
     facebook: https://www.facebook.com/profile.php?id=100070841829766
     google_maps: https://maps.app.goo.gl/HoJQoToTKGUx6ckW7
+    host: Rory Price
+
+  - day: Wednesday
+    venue: Ronnie's Hog Heaven Ice House
+    address: 4355 FM517, Dickinson, TX 77539
+    start_time: 19:00
+    end_time: 22:00
+    frequency: biweekly
+    notes: Even weeks only
+    google_maps: https://maps.app.goo.gl/W24NEfLqjLkjNa639
     host: Rory Price
 
   - day: Wednesday
@@ -157,3 +176,6 @@ hosts:
 
   - name: Brock Wilson
     facebook: https://www.facebook.com/brockwilsontexas
+
+  - name: Christian Elizondo
+    facebook: https://www.facebook.com/share/17V3XT4q4Q/
